@@ -3,7 +3,7 @@
 @section('title', $title)
 
 @section('content')
-    <a href="{{ route('schoolclass.index') }}" class="text-xs uppercase tracking-[0.15em] text-slate-400 hover:text-[#A16207]">&larr; Buku
+    <a href="{{ route('classes.index') }}" class="text-xs uppercase tracking-[0.15em] text-slate-400 hover:text-[#A16207]">&larr; Buku
 
         Induk</a>
 

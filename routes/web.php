@@ -6,13 +6,13 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\MajorController;
 
-use app\Http\Controllers\indexController;
-use app\Http\Controllers\CreateController;
-use app\Http\Controllers\StoreController;
-use app\Http\Controllers\ShowController;
-use app\Http\Controllers\EditController;
-use app\Http\Controllers\UpdateController;
-use app\Http\Controllers\DestroyController;
+use App\Http\Controllers\SchoolClass\IndexController;
+use App\Http\Controllers\SchoolClass\CreateController;
+use App\Http\Controllers\SchoolClass\StoreController;
+use App\Http\Controllers\SchoolClass\ShowController;
+use App\Http\Controllers\SchoolClass\EditController;
+use App\Http\Controllers\SchoolClass\UpdateController;
+use App\Http\Controllers\SchoolClass\DestroyController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -41,14 +41,15 @@ Route::name('teachers.')->prefix('teachers')->group(function () {
 });
 
 Route::name('classes.')->prefix('classes')->group(function () {
- 
-    Route::get('/', [IndexController::class])->name('index');
-    Route::get('/create', [CreateController::class])->name('create');
-    Route::post('/', [StoreController::class])->name('store');
-    Route::get('/{id}', [ShowController::class])->name('show');
-    Route::get('/{id}/edit', [EditController::class])->name('edit');
-    Route::put('/{id}', [UpdateController::class])->name('update');
-    Route::delete('/{id}', [DestroyController::class])->name('destroy');
+
+    Route::get('/', IndexController::class)->name('index');
+    Route::get('/create', CreateController::class)->name('create');
+    Route::post('/', StoreController::class)->name('store');
+    Route::get('/{id}', ShowController::class)->name('show');
+    Route::get('/{id}/edit', EditController::class)->name('edit');
+    Route::put('/{id}', UpdateController::class)->name('update');
+    Route::delete('/{id}', DestroyController::class)->name('destroy');
+
 });
- 
+
 Route::resource('majors', MajorController::class);

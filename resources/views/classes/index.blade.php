@@ -14,10 +14,8 @@
 
         </div>
 
-        <a href="{{ route('schoolclass.create') }}" class="bg-[#16213A] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#26324f]">
-
+        <a href="{{ route('classes.create') }}" class="bg-[#16213A] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#26324f]">
             Catat Kelas Baru
-
         </a>
 
     </div>
@@ -76,9 +74,9 @@
 
                             <div class="flex justify-end gap-4 text-xs font-medium">
 
-                                <a href="{{ route('schoolclass.show', ['id' => 1]) }}" class="text-[#16213A] hover:text-[#A16207]">Lihat</a>
+                                <a href="{{ route('classes.show', ['id' => 1]) }}" class="text-[#16213A] hover:text-[#A16207]">Lihat</a>
 
-                                <a href="{{ route('schoolclass.edit', ['id' => 1]) }}" class="text-[#16213A] hover:text-[#A16207]">Ubah</a>
+                                <a href="{{ route('classes.edit', ['id' => 1]) }}" class="text-[#16213A] hover:text-[#A16207]">Ubah</a>
 
                                 <form action="" method="POST"
                                     onsubmit="return confirm('Hapus data kelas ini dari buku induk?')">
