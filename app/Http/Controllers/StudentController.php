@@ -5,62 +5,69 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
-
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        return "Menampilkan halaman daftar siswa";
+        $title = 'Sistem Sekolah | Daftar Siswa';
+        $students = [
+            [
+                'id' => 1,
+                'nis' => 1001,
+                'name' => 'Andi',
+                'class' => 'XII TKJ II',
+                'major' => 'TKJ'
+            ],
+            [
+                'id' => 2,
+                'nis' => 1002,
+                'name' => 'Budi',
+                'class' => 'XII TKJ I',
+                'major' => 'TKJ'
+            ],
+        ];
+
+        return view('students.index', [
+            'title' => $title,
+            'students' => $students
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        return "Menampilkan halaman tambah siswa";
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        return "Melakukan penambahan data siswa";
-    }
-
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
-        return "Menampilkan siswa dengan ID: {$id}";
+        $title = 'Sistem Sekolah | Detail Siswa';
+        return view('students.show', [
+            'title' => $title
+        ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+    public function create()
+    {
+        $title = 'Sistem Sekolah | Menambah Siswa';
+        return view('students.create',[
+            'title' => $title
+        ]);
+    }
+
     public function edit(string $id)
     {
-        return "Menampilkan halaman edit siswa";
+        $title = 'Sistem Sekolah | Mengubah Data Siswa';
+        return view('students.edit', [
+            'title' => $title
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function store()
     {
-        return "Melakukan perubahan data siswa";
+        return "Menambah data siswa baru";
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    public function update(string $id)
+    {
+        return "Mengubah data siswa dengan ID: {$id}";
+    }
+
     public function destroy(string $id)
     {
-        return "Menghapus data siswa";
+        return "Menghapus data siswa dengan ID: {$id}";
     }
-
 }

@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 // //manajemen data siswa
-Route::name('students.')->prefix('students.')->group(function () {
+Route::name('students.')->prefix('students')->group(function () {
     Route::get('/', [StudentController::class, 'index'])->name('index');
     Route::get('/{id}', [StudentController::class, 'show'])->name('show');
     Route::get('/create', [StudentController::class, 'create'])->name('create');
@@ -30,7 +30,7 @@ Route::name('students.')->prefix('students.')->group(function () {
 });
 
 // //manajemen data guru
-Route::name('teachers.')->prefix('teachers.')->group(function () {
+Route::name('teachers.')->prefix('teachers')->group(function () {
     Route::get('/', [TeacherController::class, 'index'])->name('index');
     Route::get('/{id}', [TeacherController::class, 'show'])->name('show');
     Route::get('/create', [TeacherController::class, 'create'])->name('create');

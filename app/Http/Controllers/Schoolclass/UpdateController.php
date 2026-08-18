@@ -1,6 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Schoolclass;
+
+
+
+
+
+namespace App\Http\Controllers\SchoolClass;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -12,6 +17,12 @@ class UpdateController extends Controller
      */
     public function __invoke(Request $request, string $id)
     {
-        return "Menampilkan form update kelas dengan ID: {$id}" ;
+
+
+
+    return "Mengubah data SchoolClass dengan ID: {$id}";
     }
-}
+
+
+
+    }

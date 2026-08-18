@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Schoolclass;
+namespace App\Http\Controllers\SchoolClass;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -12,6 +12,6 @@ class DestroyController extends Controller
      */
     public function __invoke(Request $request, string $id)
     {
-        return "Menghapus kelas dengan ID: {$id}";
+        return "Menghapus data SchoolClass dengan ID: {$id}";
     }
 }
